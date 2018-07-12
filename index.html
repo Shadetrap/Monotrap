@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<title>Monotrap</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+
+<body onLoad="maBootan()" id="bgImage" class="body">
+        <div class="hero" data-type="parallax" data-speed="-2">
+        <header id="header">
+                <br/><br/><br/><br/><br/>
+				<div class="logo"><a href="#">Sentence Generator <span>by SHADETRAP</span></a></div>
+			</header>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+        $(document).ready(function () {
+            var bgCycle = ['images/bg03.jpg','images/bg05.jpg', 'images/bg06.jpg', 'images/bg08.jpg','images/bg10.jpg', 'images/bg11.jpg', ];
+    var bgMath = Math.floor(Math.random() * bgCycle.length);
+    var randomBg = bgCycle[bgMath];
+    // $('body').addClass(randomBg);
+    $('.hero').css({'background-image': 'url(' + randomBg + ')',
+    'background-position':'center center',
+    'background-repeat':'no-repeat',
+    'background-position': 'center',
+    'background-size':'cover',
+
+});
+    });
+    </script>
+
+    <section id="main">
+            <div class="inner">
+
+
+    <section id="one" class="wrapper style1">
+            <div class="image fit flush topImg">
+            </div>
+            <!-- <header class="special">
+                <h2>Fringilla Fermentum Tellus</h2>
+                <p>vehicula urna sed justo bibendum</p>
+            </header> -->
+            <div class="content">
+                        <textarea rows='2'type="message" id="inpoot">a/an {opinion}, {size}, {age}, {shape}, {color}, {origin}, {material}, {purpose-a}, {species} named {name}.</textarea>
+                        <br/>
+                        <button style="margin:auto;
+                        display:block;"onclick="maBootan()" id="maBootan" class="button special">Try it</button>
+                        <br/><br/>
+                        <p id="awtpoot"></p><br/>
+            </div>
+            <div class="content">
+                    <!-- {jazzacharacters} <br/> {jazzaaction}<br/> {jazzadescriptions} -->
+                    {noun}. {name}. {species}. {animal}.<br/>
+                    {jazzacharacters}, {jazzaaction}, {jazzadescriptions}.<br/>
+                    a/an {opinion} {size} {age} {shape} {color} {origin} {material} {purpose-a} {species} named {name}. <br/>
+                    Ginger's Adjective order: Quantity or number, Quality or opinion, Size, Age, Shape, Color, Proper adjective (often nationality, other place of origin, or material), Purpose or qualifier.<br/>
+
+            </div>
+        </section>
+        <!--SECTION TWO-->
+        
+
+    <!-- <div class="image fit flush topImg">
+            <img src="images/pic02.jpg" alt="" />
+        </div> -->
+
+    <!-- <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <form>
+                        <input type="text" id="inpoot" value="{{noun}}">
+                    </form>
+                    <button onclick="maBootan()" id="maBootan">Try it</button>
+                    <p id="awtpoot"></p>
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+</body>
+</html>

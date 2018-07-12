@@ -1,0 +1,38 @@
+/* *{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif} */
+
+/* body { margin:0;
+    border:1px solid black;
+    border-style: solid;
+    border-color: coral;
+} */
+
+.topImg {
+    background-image: url('../images/pic02.jpg');
+    background-size: auto;
+}
+
+p {
+    text-align: center
+}
+
+.hero {
+    width: auto;
+    height: 1080px;
+    background: #000 url(../images/bg09.jpg) no-repeat;
+    -webkit-background-size: inherit;
+    background-size: inherit;
+}
+
+/* .body {
+    padding: 2em 5%;
+    background: black;
+    line-height: 1.5;
+}
+
+.body p {
+    margin-top: 0;
+} */
+
+.dcursor {
+    cursor: default;
+}
