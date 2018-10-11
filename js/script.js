@@ -28,6 +28,8 @@ function maBootan() {
     var listJazzaFeatures = textFileToArray("https://shadetrap.github.io/Misc/Prototype/ArtyJazza/features.txt");
     var listJazzaWD = textFileToArray("https://shadetrap.github.io/Misc/Prototype/ArtyJazza/worlddescriptions.txt");
     var listJazzaWorlds = textFileToArray("https://shadetrap.github.io/Misc/Prototype/ArtyJazza/worlds.txt");
+    var listImperative = textFileToArray("https://shadetrap.github.io/Misc/Prototype/01/Sentences/Imperative/ImperativeList.txt");
+    var listInterrogative = textFileToArray("https://shadetrap.github.io/Misc/Prototype/01/Sentences/Interrogative/Interrogative.txt");
 
     //var listTest1 = textFileToArray("https://shadetrap.github.io/Misc/Prototype/test/bingo.txt");
     //var listTest2 = textFileToArray("https://shadetrap.github.io/Misc/Prototype/test/bango.txt");
@@ -52,6 +54,8 @@ function maBootan() {
     var mathJazzaFeatures = listJazzaFeatures[Math.floor(Math.random() * listJazzaFeatures.length)];
     var mathJazzaWD = listJazzaWD[Math.floor(Math.random() * listJazzaWD.length)];
     var mathJazzaWorlds = listJazzaWorlds[Math.floor(Math.random() * listJazzaWorlds.length)];
+    var mathImperative = listImperative[Math.floor(Math.random() * listImperative.length)];
+    var mathInterrogative = listInterrogative[Math.floor(Math.random() * listInterrogative.length)];
     //var mathTest1 = listTest1[Math.floor(Math.random() * listTest1.length)];
     //var mathTest2 = listTest2[Math.floor(Math.random() * listTest2.length)];
     //var mathTestCombine = TestCombiner();
@@ -64,29 +68,32 @@ function maBootan() {
 
 
 //noun, name, species, animal
-    field = field.replace(/{noun}/gi, mathNoun);
-    field = field.replace(/{name}/gi, mathName);
+    field = field.replace(/#noun/gi, mathNoun);
+    field = field.replace(/#name/gi, mathName);
 
-    field = field.replace(/{age}/gi, mathP01AdjAge);
-    field = field.replace(/{color}/gi, mathP01AdjColour);
-    field = field.replace(/{material}/gi, mathP01AdjMaterial);
-    // field = field.replace(/{opinion}/gi, "<mark style='color:red'>" + mathP01AdjOpinion + "</mark>");
-    field = field.replace(/{opinion}/gi, mathP01AdjOpinion);
-    field = field.replace(/{origin}/gi, mathP01AdjOrigin);
-    field = field.replace(/{purpose-a}/gi, mathP01AdjPurpose_a);
-    field = field.replace(/{purpose}/gi, mathP01AdjPurpose);
-    field = field.replace(/{shape}/gi, mathP01AdjShape);
-    field = field.replace(/{size}/gi, mathP01AdjSize);
+    field = field.replace(/#age/gi, mathP01AdjAge);
+    field = field.replace(/#color/gi, mathP01AdjColour);
+    field = field.replace(/#material/gi, mathP01AdjMaterial);
+    // field = field.replace(/{opinion/gi, "<mark style='color:red'>" + mathP01AdjOpinion + "</mark>");
+    field = field.replace(/#opinion/gi, mathP01AdjOpinion);
+    field = field.replace(/#origin/gi, mathP01AdjOrigin);
+    field = field.replace(/#purpose-a/gi, mathP01AdjPurpose_a);
+    field = field.replace(/#purpose/gi, mathP01AdjPurpose);
+    field = field.replace(/#shape/gi, mathP01AdjShape);
+    field = field.replace(/#size/gi, mathP01AdjSize);
 
-    field = field.replace(/{species}/gi, mathSpecies);
-    field = field.replace(/{animal}/gi, mathP01NouAnimal);
+    field = field.replace(/#species/gi, mathSpecies);
+    field = field.replace(/#animal/gi, mathP01NouAnimal);
 
-    field = field.replace(/{jazzaaction}/gi, mathJazzaActions);
-    field = field.replace(/{jazzacharacters}/gi, mathJazzaCharacters);
-    field = field.replace(/{jazzadescriptions}/gi, mathJazzaDescriptions);
-    field = field.replace(/{jazzafeatures}/gi, mathJazzaFeatures);
-    field = field.replace(/{jazzawd}/gi, mathJazzaWD);
-    field = field.replace(/{jazzaworlds}/gi, mathJazzaWorlds);
+    field = field.replace(/#jazzaaction/gi, mathJazzaActions);
+    field = field.replace(/#jazzacharacter/gi, mathJazzaCharacters);
+    field = field.replace(/#jazzadescriptions/gi, mathJazzaDescriptions);
+    field = field.replace(/#jazzafeatures/gi, mathJazzaFeatures);
+    field = field.replace(/#jazzawd/gi, mathJazzaWD);
+    field = field.replace(/#jazzaworlds/gi, mathJazzaWorlds);
+    field = field.replace(/#imperative/gi, mathImperative);
+    //field = field.replace(/{interrogative}/gi, mathInterrogative);
+    field = field.replace(/interrogative/gi, mathInterrogative);
     //  field = field.replace(/{{test}}/gi, mathTestCombine);
 
     document.getElementById("awtpoot").innerHTML = field;
@@ -110,3 +117,15 @@ function maBootan() {
         });
     })(jQuery);
 }
+jQuery(document).keydown(function(event) {
+    // If Control or Command key is pressed and the S key is pressed
+    // run save function. 83 is the key code for S.
+    // if((event.ctrlKey || event.metaKey) && event.which == 13) {
+    if(event.keyCode == 187) {
+        maBootan();
+        console.log("did it work?");
+        event.preventDefault();
+        return false;
+    }
+}
+);
